@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 //===================================================
-// XV—š—ğ
+// æ›´æ–°å±¥æ­´
 //===================================================
-// 2024/06/27 : 012020048D : V‹K’Ç‰Á
+// 2024/06/27 : 012020048D : æ–°è¦è¿½åŠ 
 //===================================================
 
 public class Search
 {
 
     //===================================================
-    // ƒtƒ@ƒCƒ‹“à‚ÌŠÖ”ŒŸõ
+    // ãƒ•ã‚¡ã‚¤ãƒ«å†…ã®é–¢æ•°æ¤œç´¢
     //===================================================
     static string Search_maintask_inTxt(string path, string func)
     {
@@ -32,24 +32,24 @@ public class Search
         StreamReader sr = new StreamReader(fs, Encoding.GetEncoding("SHIFT_JIS"));
         try
         {
-            // ––”ö‚Ü‚Å
+            // æœ«å°¾ã¾ã§
             while (sr.EndOfStream == false)
             {
-                // 1s“Ç‚İo‚·
+                // 1è¡Œèª­ã¿å‡ºã™
                 string line = sr.ReadLine();
 
-                // 7s–ÚiÅãˆÊƒ^ƒXƒNj‚Ìê‡
+                // 7è¡Œç›®ï¼ˆæœ€ä¸Šä½ã‚¿ã‚¹ã‚¯ï¼‰ã®å ´åˆ
                 if (line_cnt == 7)
                 {
-                    // ŠY“–s‚ğŠi”[
+                    // è©²å½“è¡Œã‚’æ ¼ç´
                     mid_maintask = line;
 
                 }
 
-                // ŒŸõŠÖ”‚ªŠÜ‚Ü‚ê‚Ä‚¢‚½ê‡
+                // æ¤œç´¢é–¢æ•°ãŒå«ã¾ã‚Œã¦ã„ãŸå ´åˆ
                 if (line.Contains(func))
                 {
-                    // –ß‚è’l‚ÉÅãˆÊƒ^ƒXƒN‚ğƒZƒbƒg
+                    // æˆ»ã‚Šå€¤ã«æœ€ä¸Šä½ã‚¿ã‚¹ã‚¯ã‚’ã‚»ãƒƒãƒˆ
                     return_maintask = mid_maintask;
                 }
 
@@ -57,9 +57,9 @@ public class Search
 
             }
         }
-#pragma warning disable CS0168 // •Ï” 'exc' ‚ÍéŒ¾‚³‚ê‚Ä‚¢‚Ü‚·‚ªAg—p‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ
+#pragma warning disable CS0168 // å¤‰æ•° 'exc' ã¯å®£è¨€ã•ã‚Œã¦ã„ã¾ã™ãŒã€ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã›ã‚“
         catch (Exception exc)
-#pragma warning restore CS0168 // •Ï” 'exc' ‚ÍéŒ¾‚³‚ê‚Ä‚¢‚Ü‚·‚ªAg—p‚³‚ê‚Ä‚¢‚Ü‚¹‚ñ
+#pragma warning restore CS0168 // å¤‰æ•° 'exc' ã¯å®£è¨€ã•ã‚Œã¦ã„ã¾ã™ãŒã€ä½¿ç”¨ã•ã‚Œã¦ã„ã¾ã›ã‚“
         {
         }
         finally
