@@ -192,5 +192,23 @@ public class Commons
 
     }
 
+	//===================================================
+	// 出力ファイル作成 //
+	//===================================================
+	public static void Output_Create(string str_temp, int ap_cnt, int var_cnt, string path)
+	{
+		string xlsm_macro = @"Module1.Output_Create_File";// ExcelVBA 呼び出し用
+
+		/* ---------------------- */
+		/* ExcelVBAマクロを呼び出す */
+		/* ---------------------- */
+		ExcelCall.CallMacro(str_temp, xlsm_macro, ap_cnt, var_cnt, path);
+
+		// ステータス更新
+		//status_txt = "出力テンプレートを作成";
+
+		//input?.Dispose();
+	}
+
 }
 
