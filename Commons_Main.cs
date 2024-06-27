@@ -17,6 +17,7 @@ using Microsoft.Office.Interop.Excel;
 // 2024/06/22 : 012020048D : Task1 : WorkFolder_Create()追加
 // 2024/06/20 : 012020048D : Task2 : CallMacro()追加
 // 2024/06/27 : 012020048D : Git_Test_Conflct_Mergeから移植
+// 2024/06/27 : 012020048D : Task4 : Output_File_Create()追加
 //===================================================
 
 public class Commons
@@ -191,6 +192,25 @@ public class Commons
         }
 
     }
+
+	//===================================================
+	// 出力ファイル作成
+	// str_temp : 呼び出すテンプレートファイル(.xlsm)
+	// row_cnt : 対象の行数
+	// col_cnt : 対象の列数
+	// str_direct_path : 出力先の絶対パス
+	//===================================================
+	public static void Output_File_Create(string str_temp, int row_cnt, int col_cnt, string str_direct_path)
+	{
+		// ExcelVBA マクロ名（固定値）
+		string xlsm_macro = @"Module1.Output_Create_File";
+
+		/* ---------------------- */
+		/* ExcelVBAマクロを呼び出す */
+		/* ---------------------- */
+		ExcelCall.CallMacro(str_temp, xlsm_macro, row_cnt, col_cnt, str_direct_path);
+
+	}
 
 }
 
